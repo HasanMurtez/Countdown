@@ -1,0 +1,132 @@
+﻿<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             x:Class="Countdown.MainPage">
+
+    <StackLayout Padding="20">
+        <!-- Entry fields to get player names -->
+        <Entry x:Name="Player1NameEntry" 
+               Placeholder="Player 1 Name" 
+               HorizontalOptions="Center" 
+               VerticalOptions="Center" />
+
+        <Entry x:Name="Player2NameEntry" 
+               Placeholder="Player 2 Name" 
+               HorizontalOptions="Center" 
+               VerticalOptions="Center" />
+
+        <Button x:Name="StartGameButton"
+                Text="Start Game"
+                Clicked="OnStartGameClicked" />
+
+        <!-- Display current turn -->
+        <Label x:Name="TurnLabel"
+               Text="Player X's turn to pick letters"
+               FontSize="Large"
+               HorizontalOptions="Center"
+               VerticalOptions="Center"
+               IsVisible="False" />
+
+        <!-- Display selected letters -->
+        <Label x:Name="SelectedLettersLabel"
+               Text="Selected Letters will appear here"
+               FontSize="24"
+               HorizontalOptions="Center"
+               VerticalOptions="CenterAndExpand"
+               IsVisible="False" />
+
+        <!-- Buttons to pick consonants and vowels -->
+        <Button x:Name="PickConsonantButton" 
+                Text="Pick Consonant" 
+                Clicked="OnPickConsonantClicked"
+                IsVisible="False" />
+
+        <Button x:Name="PickVowelButton" 
+                Text="Pick Vowel" 
+                Clicked="OnPickVowelClicked"
+                IsVisible="False" />
+
+        <!-- Display timer -->
+        <Label x:Name="TimerLabel"
+               Text="Timer: 30"
+               FontSize="Large"
+               HorizontalOptions="Center"
+               VerticalOptions="Center"
+               IsVisible="False" />
+
+        <!-- Submit buttons for words -->
+        <Entry x:Name="Player1WordEntry"
+               Placeholder="Player 1's word"
+               HorizontalOptions="Center"
+               IsVisible="False" />
+
+        <Button x:Name="SubmitPlayer1WordButton"
+                Text="Submit Word for Player 1"
+                Clicked="OnSubmitPlayer1WordClicked"
+                IsVisible="False" />
+
+        <Entry x:Name="Player2WordEntry"
+               Placeholder="Player 2's word"
+               HorizontalOptions="Center"
+               IsVisible="False" />
+
+        <Button x:Name="SubmitPlayer2WordButton"
+                Text="Submit Word for Player 2"
+                Clicked="OnSubmitPlayer2WordClicked"
+                IsVisible="False" />
+
+        <!-- Button to start the next round -->
+        <Button x:Name="NextRoundButton"
+                Text="Next Round"
+                Clicked="OnNextRoundClicked"
+                IsVisible="False" />
+
+        <!-- Label to display the winner at the end of the game -->
+        <Label x:Name="WinnerLabel"
+               Text="Congratulations!"
+               FontSize="Large"
+               HorizontalOptions="Center"
+               VerticalOptions="Center"
+               IsVisible="False" />
+
+        <!-- Label to display the round winner -->
+        <Label x:Name="RoundWinnerLabel"
+               Text=""
+               FontSize="Medium"
+               HorizontalOptions="Center"
+               IsVisible="False" />
+
+       
+
+        <!-- Button to restart the game -->
+        <Button x:Name="RestartGameButton"
+                Text="Restart Game"
+                Clicked="OnRestartGameClicked"
+                IsVisible="False" />
+
+        <!-- Labels to display player scores and game results -->
+        <Label x:Name="Player1ScoreLabel"
+           Text="Player 1 Score: 0"
+           FontSize="Medium"
+           HorizontalOptions="Center"
+           IsVisible="False" />
+
+        <Label x:Name="Player2ScoreLabel"
+           Text="Player 2 Score: 0"
+           FontSize="Medium"
+           HorizontalOptions="Center"
+           IsVisible="False" />
+
+        <Label x:Name="GameResultLabel"
+           Text=""
+           FontSize="Large"
+           HorizontalOptions="Center"
+           IsVisible="False" />
+
+        <toolkit:MediaElement x:Name="CountdownMediaElement"
+                      Source="resource://Countdown.mp3" />
+
+        <Button Text="View Game History" Clicked="OnViewHistoryClicked" />
+
+    </StackLayout>
+</ContentPage>
