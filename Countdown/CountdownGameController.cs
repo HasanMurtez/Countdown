@@ -48,7 +48,7 @@ namespace Countdown
             };
 
             _selectedLetters = new List<char>();
-            _dictionary = LoadDictionary(); // Load your dictionary here
+            _dictionary = LoadDictionary(); 
 
             InitializeLetters();
 
